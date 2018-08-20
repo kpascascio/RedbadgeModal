@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ModalboxComponent } from './components/modalbox/modalbox.component';
 import { ModaltextComponent } from './components/modaltext/modaltext.component';
 import { Modaltext2Component } from './components/modaltext2/modaltext2.component';
+import { PieService } from './services/pie.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,11 +22,14 @@ import { Modaltext2Component } from './components/modaltext2/modaltext2.componen
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PieService
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [ModaltextComponent, Modaltext2Component] 
+  entryComponents: [ModaltextComponent, Modaltext2Component],
   // You need to have the component that is the inside of the dialog in this property
 })
 export class AppModule { }

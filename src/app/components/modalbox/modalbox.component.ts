@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ModaltextComponent } from '../modaltext/modaltext.component'; // we need to include the component here
 import { Modaltext2Component } from '../modaltext2/modaltext2.component'; // other text box for dialog 2
+import { PieService } from '../../services/pie.service';
 
 @Component({
   selector: 'app-modalbox',
@@ -10,12 +11,20 @@ import { Modaltext2Component } from '../modaltext2/modaltext2.component'; // oth
 })
 export class ModalboxComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  pieArr: Array<Object>;
 
-  ngOnInit() { }
+  constructor(public dialog: MatDialog, private ps: PieService) { }
 
-  openBox1Dialog() {
-    this.dialog.open(ModaltextComponent);
+  ngOnInit() {
+    this.ps.getPies().subscribe((pies: Array<Object>) => {
+      return this.pieArr = pies;
+    });
+   }
+
+  pieDetails(name) {
+    this.dialog.open(ModaltextComponent, {
+      data: name
+    });
   }
 
   openBox2Dialog() {

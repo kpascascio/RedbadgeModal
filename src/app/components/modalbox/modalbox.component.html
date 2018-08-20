@@ -1,2 +1,8 @@
-<button mat-raised-button (click)="openBox1Dialog()">Box 1</button>
-<button mat-raised-button (click)="openBox2Dialog()">Box 2</button>
+<div *ngFor='let pie of pieArr'>
+  <div>
+    <b>Name:</b> {{pie.name_of_pie}}
+  </div>
+  <button mat-raised-button (click)="pieDetails(pie.name_of_pie)">Show Pie Full Details</button>
+  <button mat-raised-button (click)="openBox2Dialog()">Box 2</button>
+
+</div>

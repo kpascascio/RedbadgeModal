@@ -1,3 +1,10 @@
-<p>
-  modaltext2 works!
-</p>
+<form #f="ngForm" *ngIf="pieForm" [formGroup]="pieForm" (ngSubmit)="submitForm(f)">
+  <input matInput type="text" formControlName="id" hidden >
+  <mat-form-field>
+    <input matInput type="text" formControlName="name_of_pie" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="base_of_pie">
+  </mat-form-field>
+  <button mat-raised-button >Submit</button>
+</form>

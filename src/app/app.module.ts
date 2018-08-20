@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material';
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule, MatInputModule, MatFormFieldModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ModalboxComponent } from './components/modalbox/modalbox.component';
 import { ModaltextComponent } from './components/modaltext/modaltext.component';
 import { Modaltext2Component } from './components/modaltext2/modaltext2.component';
 import { PieService } from './services/pie.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [
     PieService

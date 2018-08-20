@@ -17,4 +17,8 @@ export class PieService {
   getPieByName(name) {
     return this.http.get(`${APIURL}/pie/${name}`);
   }
+
+  updatePie(pieObj) {
+    return this.http.put(`${APIURL}/pie/${pieObj.id}`, pieObj);
+  }
 }

@@ -27,8 +27,10 @@ export class ModalboxComponent implements OnInit {
     });
   }
 
-  openBox2Dialog() {
-    this.dialog.open(Modaltext2Component);
+  updatePie(name) {
+    this.dialog.open(Modaltext2Component, {
+      data: name
+    });
   }
 
 }
